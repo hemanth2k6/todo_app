@@ -1,68 +1,78 @@
-# Full-Stack Todo App (React + Express + PostgreSQL)
+# 📝 Todo App
 
-Production-ready Todo app with JWT authentication and user-specific todos.
+A simple full-stack Todo application to create, update, and delete tasks.
 
-## Project Structure
+---
 
-```text
-full/
-  src/                         # Frontend (React + React Router + Axios)
-    components/
-    context/
-    hooks/
-    pages/
-    services/
-    constants/
-  backend/                     # Backend (Express + PostgreSQL + JWT)
-    src/
-      config/
-      controllers/
-      middleware/
-      models/
-      routes/
-      utils/
-    sql/
-      schema.sql
-    .env.example
-  .env.example
+## 🚀 Features
+
+- Add a new task  
+- Edit a task  
+- Delete a task  
+- Mark task as completed  
+
+---
+
+## 🛠️ Tech Stack
+
+- Frontend: React  
+- Backend: Node.js, Express  
+- Database: MongoDB  
+
+---
+
+## 📁 Project Structure
+
+```
+todo_app/
+├── client/   # frontend
+├── server/   # backend
+└── README.md
 ```
 
-## Setup
+---
 
-1. Install root/frontend dependencies:
-   - `npm install`
-2. Install backend dependencies:
-   - `cd backend && npm install`
-3. Create env files:
-   - `cp .env.example .env`
-   - `cp backend/.env.example backend/.env`
-4. Create PostgreSQL database (example name: `todo_app`).
-5. Run schema:
-   - `psql -U postgres -d todo_app -f backend/sql/schema.sql`
+## ⚙️ Setup
 
-## Run
+### Clone the repo
 
-- Frontend only: `npm run dev`
-- Backend only: `npm run dev:backend`
-- Both together: `npm run dev:fullstack`
+```bash
+git clone https://github.com/hemanth2k6/todo_app.git
+cd todo_app
+```
 
-Frontend runs on `http://localhost:5173` and backend on `http://localhost:5000`.
-# React + Vite
+### Backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```bash
+cd server
+npm install
+npm start
+```
 
-Currently, two official plugins are available:
+Create `.env` file:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+MONGO_URI=your_mongodb_uri
+PORT=5000
+```
 
-## React Compiler
+### Frontend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+cd client
+npm install
+npm start
+```
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# todo_app
-# todo_app
-# todo_app
+## 🌐 Usage
+
+Open `http://localhost:3000` and use the app.
+
+---
+
+## 👨‍💻 Author
+
+Hemanth  
+https://github.com/hemanth2k6
