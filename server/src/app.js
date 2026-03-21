@@ -3,8 +3,18 @@ import cors from 'cors'
 import authRoutes from './routes/authRoutes.js'
 import todoRoutes from './routes/todoRoutes.js'
 import { errorHandler, notFoundHandler } from './middleware/errorMiddleware.js'
-
+import dotenv from "dotenv";
+dotenv.config();
 const app = express()
+import pkg from "pg";
+const { Client } = pkg;
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 app.use(
   cors({
