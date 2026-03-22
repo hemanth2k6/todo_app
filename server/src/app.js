@@ -16,7 +16,7 @@ const client = new Client({
   },
 });
 
-const cors = require("cors");
+
 
 app.use(cors({
   origin: process.env.CLIENT_URL,
