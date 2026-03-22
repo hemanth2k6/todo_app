@@ -1,23 +1,21 @@
 import dns from 'dns';
 dns.setDefaultResultOrder('ipv4first');
-import dotenv from 'dotenv'
-import app from './app.js'
-import pool from './config/db.js'
 
-dotenv.config()
+import dotenv from 'dotenv';
+import app from './app.js';
+import pool from './config/db.js';
 
-const PORT = process.env.PORT || 5000
+dotenv.config();
 
-async function startServer() {
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, async () => {
+  console.log(`Server running on port ${PORT}`);
+
   try {
-    await pool.query('SELECT 1')
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`)
-    })
+    await pool.query('SELECT 1');
+    console.log('Database connected successfully');
   } catch (error) {
-    console.error('Failed to connect to database:', error.message)
-    process.exit(1)
+    console.error('Database connection failed:', error.message);
   }
-}
-
-startServer()
+});
